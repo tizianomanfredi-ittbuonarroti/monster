@@ -10,4 +10,9 @@ public class Monster {
         this.puntiFerita = puntiFerita;
         this.danno = danno;
     }
+
+    public String attacca(){
+        return "Ti ho inflitto un danno di "+danno+" punti";
+    }
+    
 }
