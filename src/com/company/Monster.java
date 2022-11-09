@@ -19,4 +19,9 @@ public class Monster {
         puntiFerita = puntiFerita - dannoSubito;
     }
 
+    @Override
+    public String toString() {
+        return "Il nome del mostro è " + nome + "\nI punti vita del mostro sono: " + puntiFerita +
+                "\nIl danno che infligge è: " + danno;
+    }
 }
