@@ -14,5 +14,9 @@ public class Monster {
     public String attacca(){
         return "Ti ho inflitto un danno di "+danno+" punti";
     }
-    
+
+    public void subisci(int dannoSubito){
+        puntiFerita = puntiFerita - dannoSubito;
+    }
+
 }
