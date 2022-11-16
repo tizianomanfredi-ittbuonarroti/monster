@@ -4,11 +4,22 @@ public class Monster {
     private String nome;
     private int puntiFerita;
     private int danno;
+    private Arma[] armi;
+    private int nArmi;
 
-    public Monster(String nome, int puntiFerita, int danno) {
+    public Monster(String nome, int puntiFerita, int danno, int numeroBraccia) {
         this.nome = nome;
         this.puntiFerita = puntiFerita;
         this.danno = danno;
+        armi = new Arma[numeroBraccia];
+    }
+
+    public void aggiungiArma(Arma a) throws Exception{
+        if(nArmi < armi.length){
+            armi[nArmi] = new Arma(a);
+        } else {
+            throw new Exception("Hai già inserito il numero massimo di armi");
+        }
     }
 
     public int attacca(){
@@ -29,7 +40,8 @@ public class Monster {
 
     @Override
     public String toString() {
-        return "Il nome del mostro è " + nome + "\nI punti vita del mostro sono: " + puntiFerita +
-                "\nIl danno che infligge è: " + danno;
+        String str = "Il nome del mostro è " + nome + "\nI punti vita del mostro sono: " + puntiFerita +"\nIl danno che infligge è: " + danno;
+        
+        return str;
     }
 }
