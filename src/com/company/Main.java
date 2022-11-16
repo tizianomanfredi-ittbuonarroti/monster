@@ -50,5 +50,20 @@ public class Main {
         System.out.println("\n---");
         System.out.println("Fine creazione secondo mostro");
 
+        // crea oggetto Random
+        Random random = new Random();
+
+        int numero = random.nextInt(2);
+        boolean continua = true;
+        int turno;
+
+        if(numero == 0){
+            System.out.println("Inizia il mostro 1");
+            turno = 1;
+        } else {
+            System.out.println("Inizia il mostro 2");
+            turno = 2;
+        }
+
     }
 }
