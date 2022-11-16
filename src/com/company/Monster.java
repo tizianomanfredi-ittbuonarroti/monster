@@ -11,12 +11,20 @@ public class Monster {
         this.danno = danno;
     }
 
-    public String attacca(){
-        return "Ti ho inflitto un danno di "+danno+" punti";
+    public int attacca(){
+        return danno;
     }
 
     public void subisci(int dannoSubito){
         puntiFerita = puntiFerita - dannoSubito;
+    }
+
+    public boolean vivo(){
+        if (puntiFerita > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
