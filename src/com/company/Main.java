@@ -65,5 +65,33 @@ public class Main {
             turno = 2;
         }
 
+        while(continua) {
+            System.out.println("La situazione attuale del mosto 1 è: ");
+            System.out.println(m1.toString());
+            System.out.println("---");
+            System.out.println("La situazione attuale del mosto 2 è: ");
+            System.out.println(m2.toString());
+            System.out.println("\n");
+
+            if (turno == 1) {
+                m1.subisci(m2.attacca());
+                turno = 2;
+            } else if (turno == 2) {
+                m2.subisci(m1.attacca());
+                turno = 1;
+            }
+
+            if (m1.vivo() && m2.vivo()) {
+                continua = true;
+            } else if (m1.vivo()) {
+                continua = false;
+                System.out.println("Ha vinto il mostro 1");
+            } else if (m2.vivo()) {
+                System.out.println("Ha vinto il mostro 2");
+            } else {
+                System.out.println("Sono morti tutti");
+            }
+        }
+
     }
 }
