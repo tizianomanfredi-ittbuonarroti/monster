@@ -77,6 +77,8 @@ public class Main {
             turno = 2;
         }
 
+        System.out.println("---");
+
         while(continua) {
             System.out.println("La situazione attuale del mosto 1 è: ");
             System.out.println(m1.toString());
@@ -140,7 +142,7 @@ public class Main {
                     nome = inputStr.nextLine();
 
                     do {
-                        System.out.print("Inserisci il danno del mostro: ");
+                        System.out.print("Inserisci il danno dell'arma: ");
                         danno = input.nextInt();
                     } while (danno < 1);
 

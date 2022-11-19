@@ -89,7 +89,7 @@ public class Monster {
         if(nArmi == 0){
             str = str + "Il mostro non ha nessuna arma";
         } else {
-            for(int i = 0; nArmi < armi.length; i++){
+            for(int i = 0; i < nArmi; i++){
                 str = str + "L'arma numero "+ (i+1) +" è: \nIl nome dell'arma è: "+armi[i].getNome()+"\nIl danno dell'arma è: "+armi[i].getDanno()+"\n";
             }
         }
