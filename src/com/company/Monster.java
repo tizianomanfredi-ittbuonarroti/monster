@@ -23,11 +23,15 @@ public class Monster {
     }
 
     public void abbandonaArma(String nomeArma) throws Exception{
-        try {
-            int pos = cercaPosizione(nomeArma);
-            scala(pos);
-        } catch (Exception e){
-            throw new Exception(e.getMessage());
+        if(nArmi == 0){
+            throw new Exception("Il mostro non ha nessuna arma");
+        }else {
+            try {
+                int pos = cercaPosizione(nomeArma);
+                scala(pos);
+            } catch (Exception e) {
+                throw new Exception(e.getMessage());
+            }
         }
     }
 
@@ -55,6 +59,10 @@ public class Monster {
     }
 
     public int attacca(){
+        return calcolaDanno();
+    }
+
+    private int calcolaDanno(){
         int d = danno;
         for(int i = 0; i < nArmi; i++){
             d = d + armi[i].getDanno();
@@ -76,9 +84,9 @@ public class Monster {
 
     @Override
     public String toString() {
-        String str = "Il nome del mostro è " + nome + "\nI punti vita del mostro sono: " + puntiFerita +"\nIl danno che infligge è: " + danno;
+        String str = "Il nome del mostro è: " + nome + "\nI punti vita del mostro sono: " + puntiFerita +"\nIl danno che infligge è: " + calcolaDanno();
         if(nArmi == 0){
-            str = str + "Il mostro non ha nessuna";
+            str = str + "Il mostro non ha nessuna arma";
         } else {
             for(int i = 0; nArmi < armi.length; i++){
                 str = str + "L'arma numero "+ (i+1) +" è: \nIl nome dell'arma è: "+armi[i].getNome()+"\nIl danno dell'arma è: "+armi[i].getDanno()+"\n";
