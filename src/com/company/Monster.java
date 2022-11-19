@@ -17,6 +17,7 @@ public class Monster {
     public void raccogliArma(Arma a) throws Exception{
         if(nArmi < armi.length){
             armi[nArmi] = new Arma(a);
+            nArmi = nArmi + 1;
         } else {
             throw new Exception("Hai già inserito il numero massimo di armi");
         }
@@ -84,7 +85,7 @@ public class Monster {
 
     @Override
     public String toString() {
-        String str = "Il nome del mostro è: " + nome + "\nI punti vita del mostro sono: " + puntiFerita +"\nIl danno che infligge è: " + calcolaDanno();
+        String str = "Il nome del mostro è: " + nome + "\nI punti vita del mostro sono: " + puntiFerita +"\nIl danno che infligge è: " + calcolaDanno()+ "\n";
         if(nArmi == 0){
             str = str + "Il mostro non ha nessuna arma";
         } else {
