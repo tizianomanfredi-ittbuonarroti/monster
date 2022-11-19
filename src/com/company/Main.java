@@ -10,11 +10,13 @@ public class Main {
         int vita, danno, nBraccia, scelta;
 
         Scanner input = new Scanner(System.in);
+        Scanner inputStr = new Scanner(System.in);
+
 
         System.out.println("Creazione primo mostro");
         System.out.println("---");
         System.out.print("Inserisci il nome del mostro: ");
-        nome = input.nextLine();
+        nome = inputStr.nextLine();
         do {
             System.out.print("Inserisci la vita del mostro: ");
             vita = input.nextInt();
@@ -32,14 +34,13 @@ public class Main {
 
         Monster m1 = new Monster(nome,vita, danno, nBraccia);
 
-        System.out.println("\n---");
+        System.out.println("---");
         System.out.println("Fine creazione primo mostro");
-
-
+        System.out.println("---");
         System.out.println("Creazione secondo mostro");
         System.out.println("---");
         System.out.print("Inserisci il nome del mostro: ");
-        nome = input.nextLine();
+        nome = inputStr.nextLine();
         do {
             System.out.print("Inserisci la vita del mostro: ");
             vita = input.nextInt();
@@ -57,8 +58,9 @@ public class Main {
 
         Monster m2 = new Monster(nome,vita, danno, nBraccia);
 
-        System.out.println("\n---");
+        System.out.println("---");
         System.out.println("Fine creazione secondo mostro");
+        System.out.println("---");
 
         // crea oggetto Random
         Random random = new Random();
@@ -114,7 +116,7 @@ public class Main {
 
                 case 2: {
                     System.out.print("Inserisci il nome dell'arma: ");
-                    nome = input.nextLine();
+                    nome = inputStr.nextLine();
 
 
                     if (turno == 2) {
@@ -135,7 +137,7 @@ public class Main {
 
                 case 3: {
                     System.out.print("Inserisci il nome dell'arma: ");
-                    nome = input.nextLine();
+                    nome = inputStr.nextLine();
 
                     do {
                         System.out.print("Inserisci il danno del mostro: ");
