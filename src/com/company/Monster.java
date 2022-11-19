@@ -14,12 +14,44 @@ public class Monster {
         armi = new Arma[numeroBraccia];
     }
 
-    public void aggiungiArma(Arma a) throws Exception{
+    public void raccogliArma(Arma a) throws Exception{
         if(nArmi < armi.length){
             armi[nArmi] = new Arma(a);
         } else {
             throw new Exception("Hai già inserito il numero massimo di armi");
         }
+    }
+
+    public void abbandonaArma(String nomeArma) throws Exception{
+        try {
+            int pos = cercaPosizione(nomeArma);
+            scala(pos);
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    private void scala(int pos){
+        nArmi = nArmi - 1;
+
+        for(int i = pos; i < nArmi; i++){
+            armi[i].setNome(armi[i+1].getNome());
+            armi[i].setDanno(armi[i+1].getDanno());
+        }
+    }
+
+    private int cercaPosizione(String nome) throws Exception{
+        int pos = -1;
+        for(int i = 0; i < nArmi; i++){
+            if(armi[i].getNome().equals(nome)){
+                pos = i;
+            }
+        }
+        if(pos == -1){
+            throw new Exception("Nome non valido!");
+        }
+
+        return pos;
     }
 
     public int attacca(){
