@@ -55,7 +55,11 @@ public class Monster {
     }
 
     public int attacca(){
-        return danno;
+        int d = danno;
+        for(int i = 0; i < nArmi; i++){
+            d = d + armi[i].getDanno();
+        }
+        return d;
     }
 
     public void subisci(int dannoSubito){
