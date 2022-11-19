@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         String nome;
-        int vita, danno;
+        int vita, danno, nBraccia;
 
         Scanner input = new Scanner(System.in);
 
@@ -25,7 +25,12 @@ public class Main {
             danno = input.nextInt();
         } while (danno < 1);
 
-        Monster m1 = new Monster(nome,vita, danno);
+        do {
+            System.out.print("Inserisci il numero delle braccia del mostro: ");
+            nBraccia = input.nextInt();
+        } while (nBraccia < 1);
+
+        Monster m1 = new Monster(nome,vita, danno, nBraccia);
 
         System.out.println("\n---");
         System.out.println("Fine creazione primo mostro");
@@ -45,7 +50,12 @@ public class Main {
             danno = input.nextInt();
         } while (danno < 1);
 
-        Monster m2 = new Monster(nome,vita, danno);
+        do {
+            System.out.print("Inserisci il numero delle braccia del mostro: ");
+            nBraccia = input.nextInt();
+        } while (nBraccia < 1);
+
+        Monster m2 = new Monster(nome,vita, danno, nBraccia);
 
         System.out.println("\n---");
         System.out.println("Fine creazione secondo mostro");
