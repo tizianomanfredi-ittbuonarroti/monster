@@ -172,8 +172,10 @@ public class Main {
                 continua = false;
                 System.out.println("Ha vinto il mostro 1");
             } else if (m2.vivo()) {
+                continua = false;
                 System.out.println("Ha vinto il mostro 2");
             } else {
+                continua = false;
                 System.out.println("Sono morti tutti");
             }
         }
