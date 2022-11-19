@@ -22,4 +22,12 @@ public class Arma {
     public String getNome() {
         return nome;
     }
+
+    public void setDanno(int danno) {
+        this.danno = danno;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }
